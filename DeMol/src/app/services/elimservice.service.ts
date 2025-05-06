@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Person } from '../interfaces/person';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ElimserviceService {
-  people: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  people: Person[] = [];
   constructor() { }
 
   getPeople() {
     return this.people;
   }
-  addPerson(person: string) {
+  addPerson(person: Person) {
     this.people.push(person);
   }
   clearAllPeople() {

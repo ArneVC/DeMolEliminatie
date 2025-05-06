@@ -1,16 +1,16 @@
 <div class="list">
-  <p *ngFor="let person of people">a</p>
+  <p *ngFor="let person of people">{{ person.name }} {{ person.eliminated }}</p>
 </div>
 <div class="datainput">
   <mat-form-field class="example-full-width">
     <mat-label>Naam</mat-label>
-    <input matInput placeholder="Naam" value="" />
+    <input matInput placeholder="Naam" value="" [(ngModel)]="name" />
   </mat-form-field>
-  <mat-checkbox class="example-margin" [checked]="test()" (change)="test()">
+  <mat-checkbox class="example-margin" (change)="test($event.checked)">
     geëlimineerd
   </mat-checkbox>
 </div>
 <div class="buttons">
-  <button mat-raised-button>Voeg toe</button>
-  <button mat-raised-button>Clear</button>
+  <button mat-raised-button (click)="addPerson()">Voeg toe</button>
+  <button mat-raised-button (click)="clearAll()">Clear</button>
 </div>

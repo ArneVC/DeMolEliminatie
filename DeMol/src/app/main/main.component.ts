@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import { Person } from '../interfaces/person';
 
 @Component({
   selector: 'app-main',
@@ -21,12 +22,34 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './main.component.css'
 })
 export class MainComponent {
-  people: string[] = [];
+  people: Person[] = [];
+
+  eliminated: boolean = false;
+  name: string = "";
+
   constructor(private elimService: ElimserviceService) { 
     this.people = this.elimService.getPeople();
   }
-  public test()
+  public test(value: boolean)
   {
-    console.log("test");
+    if(value == true) {
+      this.eliminated = true;
+    }
+    else {
+      this.eliminated = false;
+    }
+    //log
+    console.log("elimination status: " + this.eliminated);
+  }
+  public addPerson() {
+    let eliminated = this.eliminated;
+    let name = this.name
+    const person: Person = { name, eliminated };
+    this.elimService.addPerson(person);
+    this.people = this.elimService.getPeople();
+  }
+  public clearAll() {
+    this.elimService.clearAllPeople();
+    this.people = this.elimService.getPeople();
   }
 }
