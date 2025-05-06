@@ -1,7 +1,7 @@
 <div class="container">
   <div class="list">
     <p *ngFor="let person of people">
-      {{ person.name }} {{ person.eliminated }}
+      {{ person.name }} {{ convertStatusIntoString(person.eliminated) }}
     </p>
   </div>
   <div class="datainput">

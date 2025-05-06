@@ -38,8 +38,6 @@ export class MainComponent {
     else {
       this.eliminated = false;
     }
-    //log
-    console.log("elimination status: " + this.eliminated);
   }
   public addPerson() {
     let eliminated = this.eliminated;
@@ -51,5 +49,8 @@ export class MainComponent {
   public clearAll() {
     this.elimService.clearAllPeople();
     this.people = this.elimService.getPeople();
+  }
+  public convertStatusIntoString(status: boolean): string {
+    return status ? "Geëlimineerd" : "Niet Geëlimineerd";
   }
 }
