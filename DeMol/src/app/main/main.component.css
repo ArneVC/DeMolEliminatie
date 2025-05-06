@@ -1,0 +1,24 @@
+.container {    
+    height: 80vh;
+    width: 100vw;
+    padding-top: 10vh;
+    display: grid;
+    text-align: center;
+}
+.list {
+    height: 55vh;
+    overflow: scroll;
+    text-align: center;
+    font-size: 3rem;
+    border: 1px solid gray;
+    border-radius: 2rem;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.datainput {
+    height: 10vh;
+}
+.buttons {
+    height: 10vh;
+}
