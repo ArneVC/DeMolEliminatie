@@ -45,12 +45,18 @@ export class MainComponent {
     const person: Person = { name, eliminated };
     this.elimService.addPerson(person);
     this.people = this.elimService.getPeople();
+    console.log(this.people);
   }
   public clearAll() {
     this.elimService.clearAllPeople();
     this.people = this.elimService.getPeople();
   }
   public convertStatusIntoString(status: boolean): string {
-    return status ? "Geëlimineerd" : "Niet Geëlimineerd";
+    if(status) {
+      return "Geëlimineerd";
+    }
+    else {
+      return "Niet Geëlimineerd";
+    }    
   }
 }

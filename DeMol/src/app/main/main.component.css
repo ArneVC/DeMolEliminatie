@@ -1,3 +1,8 @@
+.maincontainer {
+    background-image: url('/background.jpg');
+    background-size: cover;
+    height: 100vh;
+}
 .container {    
     height: 80vh;
     width: 100vw;
@@ -10,11 +15,14 @@
     overflow: scroll;
     text-align: center;
     font-size: 3rem;
-    border: 1px solid gray;
+    border: 1px solid white;
     border-radius: 2rem;
     margin-bottom: 5vh;
     margin-left: 10vw;
     margin-right: 10vw;
+}
+.person {
+    color: white;
 }
 .datainput {
     height: 10vh;
@@ -22,3 +30,11 @@
 .buttons {
     height: 10vh;
 }
+:root {
+    --mdc-checkbox-unselected-icon-color:orange;
+    --mdc-checkbox-selected-icon-color: orange;
+    --mdc-checkbox-selected-hover-icon-color: red;
+    --mdc-checkbox-unselected-hover-icon-color: red;
+  
+  
+  }
